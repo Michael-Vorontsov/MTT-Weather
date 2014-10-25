@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface MTTWDataController : NSObject
+
+@property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
+@property (nonatomic, strong, readonly) NSManagedObjectContext *syncContext;
+
++ (MTTWDataController *)sharedContext;
+
++ (void)saveChangesInContext:(NSManagedObjectContext *)context recursive:(BOOL)hadSaveRecursive;
+
+- (id)initWithFileURL:(NSURL *)url;
+
+- (void)wipeDB;
 
 @end

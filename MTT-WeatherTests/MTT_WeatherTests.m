@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
+#import "OCMock.h"
+
 @interface MTT_WeatherTests : XCTestCase
 
 @end

@@ -33,7 +33,6 @@
 
 #pragma mark - SubControllers Lazy
 
-
 - (MTTWDetailsViewController *)detailsViewController
 {
     if (nil == _detailsViewController)
