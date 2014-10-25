@@ -13,6 +13,8 @@
 		1CF1EFCD19FBE3CE0034BB61 /* MTTWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFC819FBE3CE0034BB61 /* MTTWAppDelegate.m */; };
 		1CF1EFD219FBE4860034BB61 /* MTTWRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFD019FBE4860034BB61 /* MTTWRootViewController.m */; };
 		1CF1EFD619FBE4D10034BB61 /* MTTWRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFD519FBE4D10034BB61 /* MTTWRootViewController.xib */; };
+		1CF1EFDC19FBEF360034BB61 /* MTTWDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFDA19FBEF360034BB61 /* MTTWDetailsViewController.m */; };
+		1CF1EFDF19FBEF610034BB61 /* MTTWDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFDE19FBEF610034BB61 /* MTTWDetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,9 @@
 		1CF1EFCF19FBE4860034BB61 /* MTTWRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTWRootViewController.h; sourceTree = "<group>"; };
 		1CF1EFD019FBE4860034BB61 /* MTTWRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWRootViewController.m; sourceTree = "<group>"; };
 		1CF1EFD519FBE4D10034BB61 /* MTTWRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTTWRootViewController.xib; sourceTree = "<group>"; };
+		1CF1EFD919FBEF360034BB61 /* MTTWDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTWDetailsViewController.h; sourceTree = "<group>"; };
+		1CF1EFDA19FBEF360034BB61 /* MTTWDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWDetailsViewController.m; sourceTree = "<group>"; };
+		1CF1EFDE19FBEF610034BB61 /* MTTWDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTTWDetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +136,7 @@
 		1CF1EFC119FBE3CE0034BB61 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1CF1EFD819FBEEFA0034BB61 /* DetailsViewController */,
 				1CF1EFD419FBE4D10034BB61 /* RootViewController */,
 			);
 			path = Screens;
@@ -166,6 +172,7 @@
 		1CF1EFC919FBE3CE0034BB61 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				1CF1EFD719FBEEB20034BB61 /* DetailsViewController */,
 				1CF1EFCE19FBE4520034BB61 /* RootViewController */,
 			);
 			path = Screens;
@@ -186,6 +193,23 @@
 				1CF1EFD519FBE4D10034BB61 /* MTTWRootViewController.xib */,
 			);
 			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		1CF1EFD719FBEEB20034BB61 /* DetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFD919FBEF360034BB61 /* MTTWDetailsViewController.h */,
+				1CF1EFDA19FBEF360034BB61 /* MTTWDetailsViewController.m */,
+			);
+			path = DetailsViewController;
+			sourceTree = "<group>";
+		};
+		1CF1EFD819FBEEFA0034BB61 /* DetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFDE19FBEF610034BB61 /* MTTWDetailsViewController.xib */,
+			);
+			path = DetailsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +295,7 @@
 			files = (
 				1CF1EFD619FBE4D10034BB61 /* MTTWRootViewController.xib in Resources */,
 				1CF1EFCA19FBE3CE0034BB61 /* Images.xcassets in Resources */,
+				1CF1EFDF19FBEF610034BB61 /* MTTWDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +316,7 @@
 				1CF1EFD219FBE4860034BB61 /* MTTWRootViewController.m in Sources */,
 				1CF1EFCD19FBE3CE0034BB61 /* MTTWAppDelegate.m in Sources */,
 				1CF1EFCC19FBE3CE0034BB61 /* main.m in Sources */,
+				1CF1EFDC19FBEF360034BB61 /* MTTWDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

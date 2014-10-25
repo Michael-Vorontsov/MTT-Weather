@@ -7,9 +7,11 @@
 //
 
 #import "MTTWRootViewController.h"
+#import "MTTWDetailsViewController.h"
 
 @interface MTTWRootViewController ()
-
+@property (weak, nonatomic) IBOutlet UIView *detailsViewContainer;
+@property (weak, nonatomic) MTTWDetailsViewController *detailsViewController;
 @end
 
 @implementation MTTWRootViewController
@@ -24,14 +26,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self detailsViewController];
 }
-*/
+
+#pragma mark - SubControllers Lazy
+
+
+- (MTTWDetailsViewController *)detailsViewController
+{
+    if (nil == _detailsViewController)
+    {
+        MTTWDetailsViewController *detailsViewController = [MTTWDetailsViewController new];
+
+        [self addChildViewController:detailsViewController];
+
+        [self.detailsViewContainer addSubview:detailsViewController.view];
+        detailsViewController.view.frame = self.detailsViewContainer.bounds;
+        detailsViewController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+
+        _detailsViewController = detailsViewController;
+
+    }
+    return _detailsViewController;
+}
+
 
 @end
