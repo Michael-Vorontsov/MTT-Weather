@@ -11,7 +11,7 @@
 @interface MTTWDataController()
 
 @property (nonatomic, strong) NSManagedObjectModel *model;
-@property (nonatomic, strong) NSPersistentStoreCoordinator *store;
+@property (nonatomic, strong) NSPersistentStoreCoordinator *storeCoordinator;
 @property (nonatomic, strong) NSManagedObjectContext *rootContext;
 @property (nonatomic, strong) NSURL *storageURL;
 @property (nonatomic, strong) NSManagedObjectContext *mainContext;
@@ -25,7 +25,7 @@ static MTTWDataController* sMTTWSharedDataContext = nil;
 
 @implementation MTTWDataController
 
-+ (MTTWDataController *)sharedContext
++ (MTTWDataController *)sharedController
 {
     //    @synchronized(self)
     static dispatch_once_t onceToken;
@@ -34,7 +34,7 @@ static MTTWDataController* sMTTWSharedDataContext = nil;
           if (nil == sMTTWSharedDataContext)
           {
               NSURL *applicationDocumentsDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-              NSURL *storeURL = [applicationDocumentsDirectoryURL URLByAppendingPathComponent:@"iLuxAdviserDB.sqlite"];
+              NSURL *storeURL = [applicationDocumentsDirectoryURL URLByAppendingPathComponent:@"MTTWDataStorage.sqlite"];
               NSAssert(storeURL != nil, @"Invalid URL for storing");
               if (storeURL)
               {
@@ -67,7 +67,7 @@ static MTTWDataController* sMTTWSharedDataContext = nil;
 
     @synchronized (self)
     {
-        NSPersistentStoreCoordinator *coordinator = [self store];
+        NSPersistentStoreCoordinator *coordinator = [self storeCoordinator];
         if (coordinator != nil)
         {
             _rootContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
@@ -123,36 +123,35 @@ static MTTWDataController* sMTTWSharedDataContext = nil;
     } while (hadSaveRecursive && nil != context && nil == error);
 }
 
-#pragma mark - Creating Persisten Store -
+#pragma mark - Creating Persistent Store and Data Model -
 
-- (NSPersistentStoreCoordinator *)store
+- (NSPersistentStoreCoordinator *)storeCoordinator
 {
-    if (_store != nil)
+    if (_storeCoordinator != nil)
     {
-        return _store;
+        return _storeCoordinator;
     }
 
     @synchronized (self)
     {
         NSError *error = nil;
-        _store = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self model]];
+        _storeCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self model]];
 
-        if (![_store addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:self.storageURL options:nil error:&error])
+        if (![_storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:self.storageURL options:nil error:&error])
         {
             NSError* metadataObtainingError = nil;
             NSDictionary* metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType URL:self.storageURL error:&metadataObtainingError];
 
-            NSLog(@"Error waddinf persisten store: %@\n MetaData: %@\n Metadata obtaining error: %@",
+            NSLog(@"Error waddinf persisten storeCoordinator: %@\n MetaData: %@\n Metadata obtaining error: %@",
                   error, metadata, metadataObtainingError);
 
-            NSAssert(YES, @"Persisten store error!");
-            _store = nil;
+            NSAssert(YES, @"Persisten storeCoordinator error!");
+            _storeCoordinator = nil;
             _model = nil;
         }
     }
-    return _store;
+    return _storeCoordinator;
 }
-
 
 - (NSManagedObjectModel *)model
 {
@@ -167,16 +166,17 @@ static MTTWDataController* sMTTWSharedDataContext = nil;
     return _model;
 }
 
-#pragma mark -
-
 - (void)wipeDB
 {
-//todo: Implement
-}
-
-- (void)saveContext:(NSManagedObjectContext *)context recursive:(BOOL)shouldSaveRecursive
-{
-//todo: Implement
+    NSError *storeError = nil;
+    self.rootContext = nil;
+    self.mainContext = nil;
+    self.syncContext = nil;
+    [self.storeCoordinator removePersistentStore:self.storeCoordinator.persistentStores.lastObject error:&storeError];
+    NSError *fileError = nil;
+    [[NSFileManager defaultManager] removeItemAtPath:self.storageURL.path error:&fileError];
+    NSAssert(nil == storeError && nil == fileError, @"");
+    self.storeCoordinator = nil;
 }
 
 @end
