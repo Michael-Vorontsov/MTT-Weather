@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CF1EF9419FBE23A0034BB61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EF9319FBE23A0034BB61 /* main.m */; };
-		1CF1EF9719FBE23A0034BB61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EF9619FBE23A0034BB61 /* AppDelegate.m */; };
-		1CF1EF9A19FBE23A0034BB61 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EF9919FBE23A0034BB61 /* RootViewController.m */; };
-		1CF1EF9D19FBE23A0034BB61 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EF9C19FBE23A0034BB61 /* DataViewController.m */; };
-		1CF1EFA019FBE23A0034BB61 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EF9F19FBE23A0034BB61 /* ModelController.m */; };
-		1CF1EFA319FBE23A0034BB61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFA119FBE23A0034BB61 /* Main.storyboard */; };
-		1CF1EFA519FBE23A0034BB61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFA419FBE23A0034BB61 /* Images.xcassets */; };
-		1CF1EFA819FBE23A0034BB61 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFA619FBE23A0034BB61 /* LaunchScreen.xib */; };
 		1CF1EFB419FBE23A0034BB61 /* MTT_WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFB319FBE23A0034BB61 /* MTT_WeatherTests.m */; };
+		1CF1EFCA19FBE3CE0034BB61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFBF19FBE3CE0034BB61 /* Images.xcassets */; };
+		1CF1EFCC19FBE3CE0034BB61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFC619FBE3CE0034BB61 /* main.m */; };
+		1CF1EFCD19FBE3CE0034BB61 /* MTTWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFC819FBE3CE0034BB61 /* MTTWAppDelegate.m */; };
+		1CF1EFD219FBE4860034BB61 /* MTTWRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFD019FBE4860034BB61 /* MTTWRootViewController.m */; };
+		1CF1EFD619FBE4D10034BB61 /* MTTWRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFD519FBE4D10034BB61 /* MTTWRootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,22 +27,17 @@
 
 /* Begin PBXFileReference section */
 		1CF1EF8E19FBE23A0034BB61 /* MTT-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTT-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1CF1EF9219FBE23A0034BB61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CF1EF9319FBE23A0034BB61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1CF1EF9519FBE23A0034BB61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1CF1EF9619FBE23A0034BB61 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1CF1EF9819FBE23A0034BB61 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		1CF1EF9919FBE23A0034BB61 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		1CF1EF9B19FBE23A0034BB61 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
-		1CF1EF9C19FBE23A0034BB61 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
-		1CF1EF9E19FBE23A0034BB61 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		1CF1EF9F19FBE23A0034BB61 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
-		1CF1EFA219FBE23A0034BB61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1CF1EFA419FBE23A0034BB61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1CF1EFA719FBE23A0034BB61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1CF1EFAD19FBE23A0034BB61 /* MTT-WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MTT-WeatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF1EFB219FBE23A0034BB61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CF1EFB319FBE23A0034BB61 /* MTT_WeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTT_WeatherTests.m; sourceTree = "<group>"; };
+		1CF1EFBF19FBE3CE0034BB61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1CF1EFC319FBE3CE0034BB61 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CF1EFC619FBE3CE0034BB61 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1CF1EFC719FBE3CE0034BB61 /* MTTWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTWAppDelegate.h; sourceTree = "<group>"; };
+		1CF1EFC819FBE3CE0034BB61 /* MTTWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWAppDelegate.m; sourceTree = "<group>"; };
+		1CF1EFCF19FBE4860034BB61 /* MTTWRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTWRootViewController.h; sourceTree = "<group>"; };
+		1CF1EFD019FBE4860034BB61 /* MTTWRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWRootViewController.m; sourceTree = "<group>"; };
+		1CF1EFD519FBE4D10034BB61 /* MTTWRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTTWRootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,29 +79,10 @@
 		1CF1EF9019FBE23A0034BB61 /* MTT-Weather */ = {
 			isa = PBXGroup;
 			children = (
-				1CF1EF9519FBE23A0034BB61 /* AppDelegate.h */,
-				1CF1EF9619FBE23A0034BB61 /* AppDelegate.m */,
-				1CF1EF9819FBE23A0034BB61 /* RootViewController.h */,
-				1CF1EF9919FBE23A0034BB61 /* RootViewController.m */,
-				1CF1EF9B19FBE23A0034BB61 /* DataViewController.h */,
-				1CF1EF9C19FBE23A0034BB61 /* DataViewController.m */,
-				1CF1EF9E19FBE23A0034BB61 /* ModelController.h */,
-				1CF1EF9F19FBE23A0034BB61 /* ModelController.m */,
-				1CF1EFA119FBE23A0034BB61 /* Main.storyboard */,
-				1CF1EFA419FBE23A0034BB61 /* Images.xcassets */,
-				1CF1EFA619FBE23A0034BB61 /* LaunchScreen.xib */,
-				1CF1EF9119FBE23A0034BB61 /* Supporting Files */,
+				1CF1EFBD19FBE3CE0034BB61 /* Resources */,
+				1CF1EFC419FBE3CE0034BB61 /* Sources */,
 			);
 			path = "MTT-Weather";
-			sourceTree = "<group>";
-		};
-		1CF1EF9119FBE23A0034BB61 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1CF1EF9219FBE23A0034BB61 /* Info.plist */,
-				1CF1EF9319FBE23A0034BB61 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		1CF1EFB019FBE23A0034BB61 /* MTT-WeatherTests */ = {
@@ -127,6 +100,92 @@
 				1CF1EFB219FBE23A0034BB61 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1CF1EFBD19FBE3CE0034BB61 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFBE19FBE3CE0034BB61 /* Images */,
+				1CF1EFC019FBE3CE0034BB61 /* NIBs */,
+				1CF1EFC219FBE3CE0034BB61 /* plists */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1CF1EFBE19FBE3CE0034BB61 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFBF19FBE3CE0034BB61 /* Images.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		1CF1EFC019FBE3CE0034BB61 /* NIBs */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFC119FBE3CE0034BB61 /* Screens */,
+			);
+			path = NIBs;
+			sourceTree = "<group>";
+		};
+		1CF1EFC119FBE3CE0034BB61 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFD419FBE4D10034BB61 /* RootViewController */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1CF1EFC219FBE3CE0034BB61 /* plists */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFC319FBE3CE0034BB61 /* Info.plist */,
+			);
+			path = plists;
+			sourceTree = "<group>";
+		};
+		1CF1EFC419FBE3CE0034BB61 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFC519FBE3CE0034BB61 /* General */,
+				1CF1EFC919FBE3CE0034BB61 /* Screens */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		1CF1EFC519FBE3CE0034BB61 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFC619FBE3CE0034BB61 /* main.m */,
+				1CF1EFC719FBE3CE0034BB61 /* MTTWAppDelegate.h */,
+				1CF1EFC819FBE3CE0034BB61 /* MTTWAppDelegate.m */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		1CF1EFC919FBE3CE0034BB61 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFCE19FBE4520034BB61 /* RootViewController */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1CF1EFCE19FBE4520034BB61 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFCF19FBE4860034BB61 /* MTTWRootViewController.h */,
+				1CF1EFD019FBE4860034BB61 /* MTTWRootViewController.m */,
+			);
+			path = RootViewController;
+			sourceTree = "<group>";
+		};
+		1CF1EFD419FBE4D10034BB61 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1CF1EFD519FBE4D10034BB61 /* MTTWRootViewController.xib */,
+			);
+			path = RootViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +232,7 @@
 		1CF1EF8619FBE23A0034BB61 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MTTW;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = MTT;
 				TargetAttributes = {
@@ -209,9 +269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF1EFA319FBE23A0034BB61 /* Main.storyboard in Resources */,
-				1CF1EFA819FBE23A0034BB61 /* LaunchScreen.xib in Resources */,
-				1CF1EFA519FBE23A0034BB61 /* Images.xcassets in Resources */,
+				1CF1EFD619FBE4D10034BB61 /* MTTWRootViewController.xib in Resources */,
+				1CF1EFCA19FBE3CE0034BB61 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,11 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF1EF9D19FBE23A0034BB61 /* DataViewController.m in Sources */,
-				1CF1EF9719FBE23A0034BB61 /* AppDelegate.m in Sources */,
-				1CF1EFA019FBE23A0034BB61 /* ModelController.m in Sources */,
-				1CF1EF9419FBE23A0034BB61 /* main.m in Sources */,
-				1CF1EF9A19FBE23A0034BB61 /* RootViewController.m in Sources */,
+				1CF1EFD219FBE4860034BB61 /* MTTWRootViewController.m in Sources */,
+				1CF1EFCD19FBE3CE0034BB61 /* MTTWAppDelegate.m in Sources */,
+				1CF1EFCC19FBE3CE0034BB61 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,25 +311,6 @@
 			targetProxy = 1CF1EFAE19FBE23A0034BB61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1CF1EFA119FBE23A0034BB61 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1CF1EFA219FBE23A0034BB61 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1CF1EFA619FBE23A0034BB61 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1CF1EFA719FBE23A0034BB61 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1CF1EFB519FBE23A0034BB61 /* Debug */ = {
@@ -355,7 +393,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "MTT-Weather/Info.plist";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/MTT-Weather/Resources/plists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -365,7 +404,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "MTT-Weather/Info.plist";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "$(SRCROOT)/MTT-Weather/Resources/plists/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
