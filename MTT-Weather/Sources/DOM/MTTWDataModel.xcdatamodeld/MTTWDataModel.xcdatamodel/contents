@@ -21,6 +21,7 @@
         <attribute name="temperature" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="weatherCode" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="weatherDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weatherIconPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weatherIconURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="windDirection" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="15" defaultValueString="0" syncable="YES"/>
@@ -32,6 +33,6 @@
     <elements>
         <element name="DailyForecast" positionX="-45" positionY="72" width="128" height="150"/>
         <element name="Region" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="WeatherCondition" positionX="-54" positionY="-9" width="128" height="208"/>
+        <element name="WeatherCondition" positionX="-54" positionY="-9" width="128" height="223"/>
     </elements>
 </model>

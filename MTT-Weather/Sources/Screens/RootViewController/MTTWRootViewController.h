@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class MTTWRegion;
+
 @interface MTTWRootViewController : UIViewController
+
+@property (nonatomic, strong) MTTWRegion *region;
 
 @end

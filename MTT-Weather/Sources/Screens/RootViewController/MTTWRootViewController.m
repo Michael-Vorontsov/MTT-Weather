@@ -8,10 +8,16 @@
 
 #import "MTTWRootViewController.h"
 #import "MTTWDetailsViewController.h"
+#import "MTTWRegion.h"
+#import "MTTWDailyForecast.h"
+#import "MTTWWeatherCondition.h"
+#import "MTTWForecastSyncOperation.h"
 
 @interface MTTWRootViewController ()
 @property (weak, nonatomic) IBOutlet UIView *detailsViewContainer;
 @property (weak, nonatomic) MTTWDetailsViewController *detailsViewController;
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
+
 @end
 
 @implementation MTTWRootViewController
@@ -28,8 +34,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self detailsViewController];
+    [super viewWillAppear:animated];
+    self.detailsViewController.needUpdateUI = YES;
+    [self sync];
 }
+
 
 #pragma mark - SubControllers Lazy
 
@@ -51,5 +60,42 @@
     return _detailsViewController;
 }
 
+#pragma mark - 
+- (NSOperationQueue *)operationQueue
+{
+    if (nil == _operationQueue)
+    {
+        _operationQueue = [NSOperationQueue new];
+    }
+    return _operationQueue;
+}
+
+- (void)sync
+{
+    NSString *regionName = (nil == self.region) ? @"London" : self.region.name;
+    MTTWForecastSyncOperation *operation = [MTTWForecastSyncOperation syncOperationForRegionName:regionName];
+    NSOperation *completionOperation = [NSBlockOperation blockOperationWithBlock:
+                                        ^{
+                                            [[NSOperationQueue mainQueue] addOperationWithBlock:
+                                             ^{
+                                                 self.region = operation.result;
+                                                 self.detailsViewController.needUpdateUI = YES;
+                                             }];
+                                        }];
+    
+    [completionOperation addDependency:operation];
+    
+    [self.operationQueue addOperation:operation];
+    [self.operationQueue addOperation:completionOperation];
+}
+
+- (void)setRegion:(MTTWRegion *)region
+{
+    if (_region != region)
+    {
+        _region = region;
+        self.detailsViewController.region = region;
+    }
+}
 
 @end

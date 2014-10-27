@@ -24,5 +24,6 @@ NSString *const kMTTWWeatherConditionEntityName = @"WeatherCondition";
 @dynamic region;
 @dynamic forecast;
 @dynamic weatherIconPath;
+@dynamic weatherDescription;
 
 @end

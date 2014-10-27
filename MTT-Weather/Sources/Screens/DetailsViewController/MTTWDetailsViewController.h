@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class MTTWRegion;
+
 @interface MTTWDetailsViewController : UIViewController
+
+@property (nonatomic, strong) MTTWRegion *region;
+
+@property (nonatomic, getter = isNeedUpdateUI) BOOL needUpdateUI;
 
 @end

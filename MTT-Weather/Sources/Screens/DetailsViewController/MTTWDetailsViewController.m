@@ -8,30 +8,75 @@
 
 #import "MTTWDetailsViewController.h"
 
+#import "MTTWWeatherCondition.h"
+#import "MTTWRegion.h"
+#import "MTTWForecastSyncOperation.h"
+
+
 @interface MTTWDetailsViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *weathrIconImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *windDirectionIconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *regionNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *maxTemparatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *minTemparatureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weatheDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *windSpeedLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *dateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *temperatureIcon;
+
 
 @end
 
+NSString *const KMTTWColdIcon = @"ColdTemp";
+NSString *const KMTTWHotIcon = @"HotTemp";
+
 @implementation MTTWDetailsViewController
 
-- (void)viewDidLoad {
+- (void)setNeedUpdateUI:(BOOL)needsUpdateUI
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(updateUI) object:nil];
+    [self performSelector:@selector(updateUI)];
+}
+
+- (void)updateUI
+{
+    MTTWWeatherCondition *condition = self.region.currectCondition;
+    self.regionNameLabel.text = self.region.name;
+    self.maxTemparatureLabel.text = [@(condition.temperature) stringValue];
+    self.windSpeedLabel.text = [@(condition.windSpeed) stringValue];
+    self.weatheDescriptionLabel.text = condition.weatherDescription;
+    if (condition.temperature > 0)
+    {
+        self.maxTemparatureLabel.textColor = [UIColor orangeColor];
+        self.temperatureIcon.image = [UIImage imageNamed:KMTTWHotIcon];
+    }
+    else
+    {
+        self.temperatureIcon.image = [UIImage imageNamed:KMTTWColdIcon];
+        self.maxTemparatureLabel.textColor = [UIColor blueColor];
+    }
+
+    [UIView animateWithDuration:1.0 animations:
+    ^{
+        self.windDirectionIconImageView.transform = CGAffineTransformMakeRotation(2.0 * M_PI  - M_PI / 8.0 * (condition.windDirection - 1));
+    }];
+}
+
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+
+
+
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

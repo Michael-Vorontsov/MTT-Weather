@@ -7,6 +7,7 @@
 //
 
 #import "MTTWForecastSyncOperation.h"
+#import "MTTWObjectBuilder.h"
 
 @interface MTTWForecastSyncOperation()
 
@@ -96,8 +97,8 @@ NSString *const kMTTWSyncAddressFormat = @"http://api.worldweatheronline.com/fre
 //    id result = nil;
     if (![self isCancelled])
     {
+       self.result = [MTTWObjectBuilder regionWithDictionary:collection];
     }
-
 }
 
 @end

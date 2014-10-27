@@ -53,4 +53,6 @@ typedef NS_ENUM(UInt16, MTTWDirection)
 
 @property (nonatomic, strong) NSString *weatherIconPath;
 
+@property (nonatomic, strong) NSString *weatherDescription;
+
 @end

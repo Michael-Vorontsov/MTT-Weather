@@ -34,6 +34,8 @@ NSString *const kMTTWTemparatureKey = @"temp_C";
 NSString *const kMTTWPressureKey = @"pressure";
 NSString *const kMTTWWindDirectionKey = @"winddir16Point";
 NSString *const kMTTWWeatherIconURLKey = @"weatherIconUrl";
+NSString *const kMTTWWeatherDescritionValueKey = @"weatherDesc";
+
 
 NSString *const kMTTWWeatherKey = @"weather";
 NSString *const kMTTWDateKey = @"date";
@@ -110,6 +112,8 @@ static MTTWObjectBuilder *sMTTWSharedObjectBuilder = nil;
         currentCondition.region = region;
     }
     NSString *temp = dictionaryRepresentation[kMTTWTemparatureKey];
+    NSDictionary *weatherDescription = [[dictionaryRepresentation valueForKeyPath:kMTTWWeatherDescritionValueKey] lastObject];
+    currentCondition.weatherDescription = weatherDescription[@"value"];
     currentCondition.temperature = [temp integerValue];
     currentCondition.pressure = [dictionaryRepresentation[kMTTWPressureKey] integerValue];
     currentCondition.windDirection = [self directionFromString:dictionaryRepresentation[kMTTWWindDirectionKey]];

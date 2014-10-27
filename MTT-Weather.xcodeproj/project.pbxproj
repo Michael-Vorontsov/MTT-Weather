@@ -22,6 +22,11 @@
 		1C5746AF19FE733800ABD1BA /* MTTWObjectBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5746AE19FE733800ABD1BA /* MTTWObjectBuilderTest.m */; };
 		1C5746B219FE7C8800ABD1BA /* MTTWDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C5746B019FE7C8800ABD1BA /* MTTWDataModel.xcdatamodeld */; };
 		1C5746B519FE7F9C00ABD1BA /* unknown-location.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C5746B319FE7F9C00ABD1BA /* unknown-location.json */; };
+		1C5746B919FE873E00ABD1BA /* Day.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C5746B719FE873E00ABD1BA /* Day.png */; };
+		1C5746BA19FE873E00ABD1BA /* Night.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C5746B819FE873E00ABD1BA /* Night.png */; };
+		1C5746BC19FE891F00ABD1BA /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C5746BB19FE891F00ABD1BA /* arrow.png */; };
+		1C5746C219FE946500ABD1BA /* ColdTemp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C5746C019FE946500ABD1BA /* ColdTemp.png */; };
+		1C5746C319FE946500ABD1BA /* HotTemp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C5746C119FE946500ABD1BA /* HotTemp.png */; };
 		1CF1EFB419FBE23A0034BB61 /* MTT_WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFB319FBE23A0034BB61 /* MTT_WeatherTests.m */; };
 		1CF1EFCA19FBE3CE0034BB61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFBF19FBE3CE0034BB61 /* Images.xcassets */; };
 		1CF1EFCC19FBE3CE0034BB61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFC619FBE3CE0034BB61 /* main.m */; };
@@ -61,6 +66,11 @@
 		1C5746AE19FE733800ABD1BA /* MTTWObjectBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWObjectBuilderTest.m; sourceTree = "<group>"; };
 		1C5746B119FE7C8800ABD1BA /* MTTWDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MTTWDataModel.xcdatamodel; sourceTree = "<group>"; };
 		1C5746B319FE7F9C00ABD1BA /* unknown-location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "unknown-location.json"; sourceTree = "<group>"; };
+		1C5746B719FE873E00ABD1BA /* Day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Day.png; sourceTree = "<group>"; };
+		1C5746B819FE873E00ABD1BA /* Night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Night.png; sourceTree = "<group>"; };
+		1C5746BB19FE891F00ABD1BA /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		1C5746C019FE946500ABD1BA /* ColdTemp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColdTemp.png; sourceTree = "<group>"; };
+		1C5746C119FE946500ABD1BA /* HotTemp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HotTemp.png; sourceTree = "<group>"; };
 		1CF1EF8E19FBE23A0034BB61 /* MTT-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTT-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF1EFAD19FBE23A0034BB61 /* MTT-WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MTT-WeatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF1EFB219FBE23A0034BB61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -212,6 +222,11 @@
 		1CF1EFBE19FBE3CE0034BB61 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1C5746C019FE946500ABD1BA /* ColdTemp.png */,
+				1C5746C119FE946500ABD1BA /* HotTemp.png */,
+				1C5746BB19FE891F00ABD1BA /* arrow.png */,
+				1C5746B719FE873E00ABD1BA /* Day.png */,
+				1C5746B819FE873E00ABD1BA /* Night.png */,
 				1CF1EFBF19FBE3CE0034BB61 /* Images.xcassets */,
 			);
 			path = Images;
@@ -404,9 +419,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C5746BA19FE873E00ABD1BA /* Night.png in Resources */,
+				1C5746C219FE946500ABD1BA /* ColdTemp.png in Resources */,
+				1C5746BC19FE891F00ABD1BA /* arrow.png in Resources */,
+				1C5746B919FE873E00ABD1BA /* Day.png in Resources */,
 				1CF1EFD619FBE4D10034BB61 /* MTTWRootViewController.xib in Resources */,
 				1CF1EFCA19FBE3CE0034BB61 /* Images.xcassets in Resources */,
 				1CF1EFDF19FBEF610034BB61 /* MTTWDetailsViewController.xib in Resources */,
+				1C5746C319FE946500ABD1BA /* HotTemp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
