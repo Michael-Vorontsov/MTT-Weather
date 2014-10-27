@@ -10,6 +10,7 @@
 #import "MTTWDailyForecast.h"
 #import "MTTWWeatherCondition.h"
 
+NSString *const kMTTWRegionEntityName = @"Region";
 
 @implementation MTTWRegion
 

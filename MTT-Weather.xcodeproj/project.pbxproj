@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C38B8BE19FC0C28005BE05A /* MTTWDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C38B8BC19FC0C28005BE05A /* MTTWDataModel.xcdatamodeld */; };
-		1C38B8BF19FC0C28005BE05A /* MTTWDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C38B8BC19FC0C28005BE05A /* MTTWDataModel.xcdatamodeld */; };
 		1C38B8C319FC0C78005BE05A /* MTTWDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C38B8C219FC0C78005BE05A /* MTTWDataController.m */; };
 		1C38B8C419FC0C78005BE05A /* MTTWDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C38B8C219FC0C78005BE05A /* MTTWDataController.m */; };
 		1C38B8E219FC4784005BE05A /* MTTWWeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C38B8E119FC4784005BE05A /* MTTWWeatherCondition.m */; };
@@ -18,6 +16,12 @@
 		1C38B8EA19FC4785005BE05A /* MTTWDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C38B8E919FC4785005BE05A /* MTTWDailyForecast.m */; };
 		1C38B8EB19FC4785005BE05A /* MTTWDailyForecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C38B8E919FC4785005BE05A /* MTTWDailyForecast.m */; };
 		1C38B8ED19FC4A8D005BE05A /* MTTWDataManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C38B8EC19FC4A8D005BE05A /* MTTWDataManagerTests.m */; };
+		1C38B8F719FCD620005BE05A /* MTTWForecastSyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C38B8F619FCD620005BE05A /* MTTWForecastSyncOperation.m */; };
+		1C38B8FB19FCDD24005BE05A /* MTTWObjectBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C38B8FA19FCDD24005BE05A /* MTTWObjectBuilder.m */; };
+		1C38B8FF19FE4EF8005BE05A /* kiev-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C38B8FD19FE4EF8005BE05A /* kiev-response.json */; };
+		1C5746AF19FE733800ABD1BA /* MTTWObjectBuilderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5746AE19FE733800ABD1BA /* MTTWObjectBuilderTest.m */; };
+		1C5746B219FE7C8800ABD1BA /* MTTWDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C5746B019FE7C8800ABD1BA /* MTTWDataModel.xcdatamodeld */; };
+		1C5746B519FE7F9C00ABD1BA /* unknown-location.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C5746B319FE7F9C00ABD1BA /* unknown-location.json */; };
 		1CF1EFB419FBE23A0034BB61 /* MTT_WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFB319FBE23A0034BB61 /* MTT_WeatherTests.m */; };
 		1CF1EFCA19FBE3CE0034BB61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFBF19FBE3CE0034BB61 /* Images.xcassets */; };
 		1CF1EFCC19FBE3CE0034BB61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFC619FBE3CE0034BB61 /* main.m */; };
@@ -40,7 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C38B8BD19FC0C28005BE05A /* MTTWDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MTTWDataModel.xcdatamodel; sourceTree = "<group>"; };
 		1C38B8C119FC0C78005BE05A /* MTTWDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTWDataController.h; sourceTree = "<group>"; };
 		1C38B8C219FC0C78005BE05A /* MTTWDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWDataController.m; sourceTree = "<group>"; };
 		1C38B8E019FC4784005BE05A /* MTTWWeatherCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTWWeatherCondition.h; sourceTree = "<group>"; };
@@ -50,6 +53,14 @@
 		1C38B8E819FC4785005BE05A /* MTTWDailyForecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTWDailyForecast.h; sourceTree = "<group>"; };
 		1C38B8E919FC4785005BE05A /* MTTWDailyForecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWDailyForecast.m; sourceTree = "<group>"; };
 		1C38B8EC19FC4A8D005BE05A /* MTTWDataManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWDataManagerTests.m; sourceTree = "<group>"; };
+		1C38B8F519FCD620005BE05A /* MTTWForecastSyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTWForecastSyncOperation.h; sourceTree = "<group>"; };
+		1C38B8F619FCD620005BE05A /* MTTWForecastSyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWForecastSyncOperation.m; sourceTree = "<group>"; };
+		1C38B8F919FCDD24005BE05A /* MTTWObjectBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTWObjectBuilder.h; sourceTree = "<group>"; };
+		1C38B8FA19FCDD24005BE05A /* MTTWObjectBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWObjectBuilder.m; sourceTree = "<group>"; };
+		1C38B8FD19FE4EF8005BE05A /* kiev-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "kiev-response.json"; sourceTree = "<group>"; };
+		1C5746AE19FE733800ABD1BA /* MTTWObjectBuilderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWObjectBuilderTest.m; sourceTree = "<group>"; };
+		1C5746B119FE7C8800ABD1BA /* MTTWDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MTTWDataModel.xcdatamodel; sourceTree = "<group>"; };
+		1C5746B319FE7F9C00ABD1BA /* unknown-location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "unknown-location.json"; sourceTree = "<group>"; };
 		1CF1EF8E19FBE23A0034BB61 /* MTT-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTT-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF1EFAD19FBE23A0034BB61 /* MTT-WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MTT-WeatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF1EFB219FBE23A0034BB61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,8 +110,8 @@
 		1C38B8BB19FC0BD3005BE05A /* DOM */ = {
 			isa = PBXGroup;
 			children = (
+				1C5746B019FE7C8800ABD1BA /* MTTWDataModel.xcdatamodeld */,
 				1C38B8C019FC0C32005BE05A /* ManagedObjects */,
-				1C38B8BC19FC0C28005BE05A /* MTTWDataModel.xcdatamodeld */,
 				1C38B8C119FC0C78005BE05A /* MTTWDataController.h */,
 				1C38B8C219FC0C78005BE05A /* MTTWDataController.m */,
 			);
@@ -118,6 +129,26 @@
 				1C38B8E119FC4784005BE05A /* MTTWWeatherCondition.m */,
 			);
 			path = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		1C38B8F419FCD606005BE05A /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				1C38B8F519FCD620005BE05A /* MTTWForecastSyncOperation.h */,
+				1C38B8F619FCD620005BE05A /* MTTWForecastSyncOperation.m */,
+				1C38B8F919FCDD24005BE05A /* MTTWObjectBuilder.h */,
+				1C38B8FA19FCDD24005BE05A /* MTTWObjectBuilder.m */,
+			);
+			path = Sync;
+			sourceTree = "<group>";
+		};
+		1C38B8FC19FE4EAB005BE05A /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				1C38B8FD19FE4EF8005BE05A /* kiev-response.json */,
+				1C5746B319FE7F9C00ABD1BA /* unknown-location.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		1CF1EF8519FBE23A0034BB61 = {
@@ -150,10 +181,12 @@
 		1CF1EFB019FBE23A0034BB61 /* MTT-WeatherTests */ = {
 			isa = PBXGroup;
 			children = (
+				1C38B8FC19FE4EAB005BE05A /* Mocks */,
 				1CF1EFE019FBFA5D0034BB61 /* OCMock */,
 				1CF1EFB119FBE23A0034BB61 /* Supporting Files */,
 				1C38B8EC19FC4A8D005BE05A /* MTTWDataManagerTests.m */,
 				1CF1EFB319FBE23A0034BB61 /* MTT_WeatherTests.m */,
+				1C5746AE19FE733800ABD1BA /* MTTWObjectBuilderTest.m */,
 			);
 			path = "MTT-WeatherTests";
 			sourceTree = "<group>";
@@ -212,6 +245,7 @@
 		1CF1EFC419FBE3CE0034BB61 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				1C38B8F419FCD606005BE05A /* Sync */,
 				1C38B8BB19FC0BD3005BE05A /* DOM */,
 				1CF1EFC519FBE3CE0034BB61 /* General */,
 				1CF1EFC919FBE3CE0034BB61 /* Screens */,
@@ -380,6 +414,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C38B8FF19FE4EF8005BE05A /* kiev-response.json in Resources */,
+				1C5746B519FE7F9C00ABD1BA /* unknown-location.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,10 +428,12 @@
 			files = (
 				1C38B8E219FC4784005BE05A /* MTTWWeatherCondition.m in Sources */,
 				1CF1EFD219FBE4860034BB61 /* MTTWRootViewController.m in Sources */,
-				1C38B8BE19FC0C28005BE05A /* MTTWDataModel.xcdatamodeld in Sources */,
+				1C38B8F719FCD620005BE05A /* MTTWForecastSyncOperation.m in Sources */,
+				1C38B8FB19FCDD24005BE05A /* MTTWObjectBuilder.m in Sources */,
 				1C38B8EA19FC4785005BE05A /* MTTWDailyForecast.m in Sources */,
 				1CF1EFCD19FBE3CE0034BB61 /* MTTWAppDelegate.m in Sources */,
 				1C38B8C319FC0C78005BE05A /* MTTWDataController.m in Sources */,
+				1C5746B219FE7C8800ABD1BA /* MTTWDataModel.xcdatamodeld in Sources */,
 				1CF1EFCC19FBE3CE0034BB61 /* main.m in Sources */,
 				1CF1EFDC19FBEF360034BB61 /* MTTWDetailsViewController.m in Sources */,
 				1C38B8E619FC4785005BE05A /* MTTWRegion.m in Sources */,
@@ -410,9 +448,9 @@
 				1C38B8E319FC4784005BE05A /* MTTWWeatherCondition.m in Sources */,
 				1C38B8C419FC0C78005BE05A /* MTTWDataController.m in Sources */,
 				1CF1EFB419FBE23A0034BB61 /* MTT_WeatherTests.m in Sources */,
+				1C5746AF19FE733800ABD1BA /* MTTWObjectBuilderTest.m in Sources */,
 				1C38B8ED19FC4A8D005BE05A /* MTTWDataManagerTests.m in Sources */,
 				1C38B8E719FC4785005BE05A /* MTTWRegion.m in Sources */,
-				1C38B8BF19FC0C28005BE05A /* MTTWDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,12 +650,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1C38B8BC19FC0C28005BE05A /* MTTWDataModel.xcdatamodeld */ = {
+		1C5746B019FE7C8800ABD1BA /* MTTWDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1C38B8BD19FC0C28005BE05A /* MTTWDataModel.xcdatamodel */,
+				1C5746B119FE7C8800ABD1BA /* MTTWDataModel.xcdatamodel */,
 			);
-			currentVersion = 1C38B8BD19FC0C28005BE05A /* MTTWDataModel.xcdatamodel */;
+			currentVersion = 1C5746B119FE7C8800ABD1BA /* MTTWDataModel.xcdatamodel */;
 			path = MTTWDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

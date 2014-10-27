@@ -9,18 +9,48 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+extern NSString *const kMTTWWeatherConditionEntityName;
+
+typedef NS_ENUM(UInt16, MTTWDirection)
+{
+    kMTTWDirectionUnknown = 0,
+    
+    kMTTWDirectionS,
+    kMTTWDirectionSSE,
+    kMTTWDirectionSE,
+    kMTTWDirectionESE,
+    kMTTWDirectionE,
+    kMTTWDirectionENE,
+    kMTTWDirectionNE,
+    kMTTWDirectionNNE,
+    kMTTWDirectionN,
+    kMTTWDirectionNNW,
+    kMTTWDirectionNW,
+    kMTTWDirectionWNW,
+    kMTTWDirectionW,
+    kMTTWDirectionWSW,
+    kMTTWDirectionSW,
+    kMTTWDirectionSSW,
+};
+
 @class MTTWDailyForecast, MTTWRegion;
 
 @interface MTTWWeatherCondition : NSManagedObject
 
 @property (nonatomic, retain) NSDate * time;
-@property (nonatomic, retain) NSNumber * temperature;
-@property (nonatomic, retain) NSNumber * humidity;
-@property (nonatomic, retain) NSNumber * skyState;
-@property (nonatomic, retain) NSNumber * windDirection;
-@property (nonatomic, retain) NSNumber * pressure;
-@property (nonatomic, retain) NSNumber * windSpeed;
+
+@property (nonatomic) int16_t temperature;
+@property (nonatomic) uint16_t humidity;
+@property (nonatomic) uint16_t skyState;
+
+@property (nonatomic) uint16_t windDirection;
+
+@property (nonatomic) uint16_t pressure;
+@property (nonatomic) uint16_t windSpeed;
+
 @property (nonatomic, retain) MTTWRegion *region;
 @property (nonatomic, retain) MTTWDailyForecast *forecast;
+
+@property (nonatomic, strong) NSString *weatherIconPath;
 
 @end

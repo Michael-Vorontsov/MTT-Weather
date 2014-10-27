@@ -10,14 +10,19 @@
 #import "MTTWDailyForecast.h"
 #import "MTTWWeatherCondition.h"
 
+NSString *const kMTTWDailyForecastEntityName = @"DailyForecast";
 
 @implementation MTTWDailyForecast
 
 @dynamic maxTemp;
 @dynamic minTemp;
+
 @dynamic sunrise;
 @dynamic sunset;
+
 @dynamic region;
 @dynamic hourly;
+
+@dynamic date;
 
 @end

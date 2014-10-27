@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+extern NSString *const kMTTWRegionEntityName;
+
 @class MTTWDailyForecast, MTTWWeatherCondition;
 
 @interface MTTWRegion : NSManagedObject
@@ -17,6 +19,7 @@
 @property (nonatomic, retain) NSString * timeZone;
 @property (nonatomic, retain) NSSet *forecasts;
 @property (nonatomic, retain) MTTWWeatherCondition *currectCondition;
+
 @end
 
 @interface MTTWRegion (CoreDataGeneratedAccessors)

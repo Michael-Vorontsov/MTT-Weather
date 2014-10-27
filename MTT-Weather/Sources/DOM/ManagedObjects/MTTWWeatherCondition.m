@@ -10,6 +10,7 @@
 #import "MTTWDailyForecast.h"
 #import "MTTWRegion.h"
 
+NSString *const kMTTWWeatherConditionEntityName = @"WeatherCondition";
 
 @implementation MTTWWeatherCondition
 
@@ -22,5 +23,6 @@
 @dynamic windSpeed;
 @dynamic region;
 @dynamic forecast;
+@dynamic weatherIconPath;
 
 @end

@@ -9,16 +9,23 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class MTTWDailyForecast, MTTWWeatherCondition;
+extern NSString *const kMTTWDailyForecastEntityName;
+
+@class MTTWWeatherCondition;
+@class MTTWRegion;
 
 @interface MTTWDailyForecast : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * maxTemp;
-@property (nonatomic, retain) NSNumber * minTemp;
+@property (nonatomic) int16_t maxTemp;
+@property (nonatomic) int16_t minTemp;
+
 @property (nonatomic, retain) NSDate * sunrise;
 @property (nonatomic, retain) NSDate * sunset;
-@property (nonatomic, retain) MTTWDailyForecast *region;
+
+@property (nonatomic, retain) MTTWRegion *region;
+
 @property (nonatomic, retain) NSSet *hourly;
+@property (nonatomic, retain) NSDate *date;
 @end
 
 @interface MTTWDailyForecast (CoreDataGeneratedAccessors)

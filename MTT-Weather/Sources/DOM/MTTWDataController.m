@@ -21,7 +21,7 @@
 
 #pragma mark -
 
-static MTTWDataController* sMTTWSharedDataContext = nil;
+static MTTWDataController* sMTTWSharedDataController = nil;
 
 @implementation MTTWDataController
 
@@ -30,20 +30,20 @@ static MTTWDataController* sMTTWSharedDataContext = nil;
     //    @synchronized(self)
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken,
-      ^{
-          if (nil == sMTTWSharedDataContext)
+    ^{
+      if (nil == sMTTWSharedDataController)
+      {
+          NSURL *applicationDocumentsDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+          NSURL *storeURL = [applicationDocumentsDirectoryURL URLByAppendingPathComponent:@"MTTWDataStorage.sqlite"];
+          NSAssert(storeURL != nil, @"Invalid URL for storing");
+          if (storeURL)
           {
-              NSURL *applicationDocumentsDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-              NSURL *storeURL = [applicationDocumentsDirectoryURL URLByAppendingPathComponent:@"MTTWDataStorage.sqlite"];
-              NSAssert(storeURL != nil, @"Invalid URL for storing");
-              if (storeURL)
-              {
-                  sMTTWSharedDataContext = [[self alloc] initWithFileURL:storeURL];
-                  [sMTTWSharedDataContext mainContext];
-              }
+              sMTTWSharedDataController = [[self alloc] initWithFileURL:storeURL];
+              [sMTTWSharedDataController mainContext];
           }
-      });
-    return sMTTWSharedDataContext;
+      }
+    });
+    return sMTTWSharedDataController;
 }
 
 - (id)initWithFileURL:(NSURL *)url
@@ -139,15 +139,26 @@ static MTTWDataController* sMTTWSharedDataContext = nil;
 
         if (![_storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:self.storageURL options:nil error:&error])
         {
-            NSError* metadataObtainingError = nil;
-            NSDictionary* metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType URL:self.storageURL error:&metadataObtainingError];
+            NSError *wipeError = nil;
+            [[NSFileManager defaultManager] removeItemAtPath:self.storageURL.path error:&wipeError];
+            if (nil == wipeError)
+            {
+                NSLog(@"Wipe DB!");
+                self.storeCoordinator = nil;
+                return self.storeCoordinator;
+            }
+            else
+            {
+                NSError* metadataObtainingError = nil;
+                NSDictionary* metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:NSSQLiteStoreType URL:self.storageURL error:&metadataObtainingError];
 
-            NSLog(@"Error waddinf persisten storeCoordinator: %@\n MetaData: %@\n Metadata obtaining error: %@",
-                  error, metadata, metadataObtainingError);
+                NSLog(@"Error waddinf persisten storeCoordinator: %@\n MetaData: %@\n Metadata obtaining error: %@",
+                      error, metadata, metadataObtainingError);
 
-            NSAssert(YES, @"Persisten storeCoordinator error!");
-            _storeCoordinator = nil;
-            _model = nil;
+                NSAssert(YES, @"Persisten storeCoordinator error!");
+                _storeCoordinator = nil;
+                _model = nil;
+            }
         }
     }
     return _storeCoordinator;
@@ -178,5 +189,11 @@ static MTTWDataController* sMTTWSharedDataContext = nil;
     NSAssert(nil == storeError && nil == fileError, @"");
     self.storeCoordinator = nil;
 }
+
+- (NSFetchRequest *)requestWithRegionName:(NSString *)name
+{
+    return [self.model fetchRequestFromTemplateWithName:@"CityByName" substitutionVariables:@{@"NAME" : name}];
+}
+
 
 @end

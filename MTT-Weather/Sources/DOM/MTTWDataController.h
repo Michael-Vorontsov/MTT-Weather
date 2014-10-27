@@ -14,12 +14,15 @@
 @property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
 @property (nonatomic, strong, readonly) NSManagedObjectContext *syncContext;
 
-+ (MTTWDataController *)sharedController;
+
++ (instancetype)sharedController;
 
 + (void)saveChangesInContext:(NSManagedObjectContext *)context recursive:(BOOL)hadSaveRecursive;
 
 - (id)initWithFileURL:(NSURL *)url;
 
 - (void)wipeDB;
+
+- (NSFetchRequest *)requestWithRegionName:(NSString *)name;
 
 @end
