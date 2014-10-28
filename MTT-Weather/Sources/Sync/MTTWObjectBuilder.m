@@ -33,9 +33,11 @@ NSString *const kMTTWCurrentConditionKey = @"current_condition";
 NSString *const kMTTWTemparatureKey = @"temp_C";
 NSString *const kMTTWPressureKey = @"pressure";
 NSString *const kMTTWWindDirectionKey = @"winddir16Point";
+NSString *const kMTTWWindSpeedKey = @"windspeedKmph";
 NSString *const kMTTWWeatherIconURLKey = @"weatherIconUrl";
 NSString *const kMTTWWeatherDescritionValueKey = @"weatherDesc";
 
+NSString *const kMTTWValueKey = @"value";
 
 NSString *const kMTTWWeatherKey = @"weather";
 NSString *const kMTTWDateKey = @"date";
@@ -43,7 +45,6 @@ NSString *const kMTTWDateKey = @"date";
 
 NSString *const kMTTWRequestKey = @"request";
 NSString *const kMTTWQueryKey = @"query";
-
 
 NSString *const kMTTWMaxTemparatureKey = @"maxtempC";
 NSString *const kMTTWMinTemparatureKey = @"mintempC";
@@ -82,7 +83,7 @@ static MTTWObjectBuilder *sMTTWSharedObjectBuilder = nil;
     {
 //        _dateFormatter = [NSDateFormatter dateFormatFromTemplate:@"YYYY-MM-DD" options:0 locale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"]];
         _dateFormatter = [[NSDateFormatter alloc] init];
-        _dateFormatter.dateFormat = @"YYYY-MM-DD";
+        _dateFormatter.dateFormat = @"yyyy-MM-dd";
 //        _dateFormatter.dateStyle = NSDateFormatterShortStyle;
 //        _dateFormatter.timeStyle = NSDateFormatterNoStyle;
 
@@ -111,12 +112,18 @@ static MTTWObjectBuilder *sMTTWSharedObjectBuilder = nil;
                                                          inManagedObjectContext:region.managedObjectContext];
         currentCondition.region = region;
     }
+
+    NSDictionary *weatherDescription = [dictionaryRepresentation[kMTTWWeatherDescritionValueKey] lastObject];
+    currentCondition.weatherDescription = weatherDescription[kMTTWValueKey];
+
+    NSDictionary *weatherDesctriptionURL = [dictionaryRepresentation[kMTTWWeatherIconURLKey] lastObject];
+    currentCondition.weatherIconPath = weatherDesctriptionURL[kMTTWValueKey];
+
     NSString *temp = dictionaryRepresentation[kMTTWTemparatureKey];
-    NSDictionary *weatherDescription = [[dictionaryRepresentation valueForKeyPath:kMTTWWeatherDescritionValueKey] lastObject];
-    currentCondition.weatherDescription = weatherDescription[@"value"];
     currentCondition.temperature = [temp integerValue];
     currentCondition.pressure = [dictionaryRepresentation[kMTTWPressureKey] integerValue];
     currentCondition.windDirection = [self directionFromString:dictionaryRepresentation[kMTTWWindDirectionKey]];
+    currentCondition.windSpeed = [dictionaryRepresentation[kMTTWWindSpeedKey] integerValue];
     return currentCondition;
 }
 
@@ -205,6 +212,10 @@ static MTTWObjectBuilder *sMTTWSharedObjectBuilder = nil;
     ^{
         region = [self regionWithDataDictionary:dataDictionary inContext:context];
     }];
+    NSError *error = nil;
+    [MTTWDataController saveChangesInContext:context recursive:YES];
+//    [context save:&error];
+    NSAssert(nil == error, nil);
     return region;
 }
 

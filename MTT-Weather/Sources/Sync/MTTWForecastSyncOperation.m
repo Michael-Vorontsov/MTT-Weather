@@ -8,6 +8,7 @@
 
 #import "MTTWForecastSyncOperation.h"
 #import "MTTWObjectBuilder.h"
+#import <CoreData/CoreData.h>
 
 @interface MTTWForecastSyncOperation()
 
@@ -17,10 +18,19 @@
 
 @end;
 
-NSString *const kMTTWSyncAddressFormat = @"http://api.worldweatheronline.com/free/v2/weather.ashx?q=%@&format=json&num_of_days=2&key=%@";
+NSString *const kMTTWSyncAddressFormat = @"http://api.worldweatheronline.com/free/v2/weather.ashx?q=%@&format=json&num_of_days=5&key=%@";
 
 
 @implementation MTTWForecastSyncOperation
+
+- (void)dealloc
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken,
+    ^{
+        NSLog(@"Deallocating of Sync Operation - cofirms that blocks releaeing dependednt object properly!");
+    });
+}
 
 + (instancetype)syncOperationForRegionName:(NSString *)regionName
 {
@@ -38,7 +48,9 @@ NSString *const kMTTWSyncAddressFormat = @"http://api.worldweatheronline.com/fre
     self = [super init];
     if (nil != self)
     {
-        NSString *syncPath = [NSString stringWithFormat:kMTTWSyncAddressFormat, regionName, [MTTWForecastSyncOperation apiKey]];
+        NSString *syncPath = [NSString stringWithFormat:kMTTWSyncAddressFormat,
+            [regionName stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+            [MTTWForecastSyncOperation apiKey]];
         _syncURL = [NSURL URLWithString:syncPath];
     }
     return self;
@@ -84,6 +96,12 @@ NSString *const kMTTWSyncAddressFormat = @"http://api.worldweatheronline.com/fre
 
 - (void)main
 {
+    if (nil == self.syncURL)
+    {
+        [self cancel];
+        return;
+    }
+
     NSData *data = nil;
     if (![self isCancelled])
     {
@@ -97,7 +115,8 @@ NSString *const kMTTWSyncAddressFormat = @"http://api.worldweatheronline.com/fre
 //    id result = nil;
     if (![self isCancelled])
     {
-       self.result = [MTTWObjectBuilder regionWithDictionary:collection];
+        NSManagedObject *object = (NSManagedObject *)[MTTWObjectBuilder regionWithDictionary:collection];
+       self.result = [object objectID];
     }
 }
 

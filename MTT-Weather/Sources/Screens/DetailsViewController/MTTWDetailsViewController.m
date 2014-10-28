@@ -12,10 +12,11 @@
 #import "MTTWRegion.h"
 #import "MTTWForecastSyncOperation.h"
 
+#import "MTTWIconImageView.h"
 
 @interface MTTWDetailsViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *weathrIconImageView;
+@property (weak, nonatomic) IBOutlet MTTWIconImageView *weathrIconImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *windDirectionIconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *regionNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxTemparatureLabel;
@@ -57,6 +58,8 @@ NSString *const KMTTWHotIcon = @"HotTemp";
         self.maxTemparatureLabel.textColor = [UIColor blueColor];
     }
 
+    [self.weathrIconImageView loadImageFromRemotePath:condition.weatherIconPath];
+
     [UIView animateWithDuration:1.0 animations:
     ^{
         self.windDirectionIconImageView.transform = CGAffineTransformMakeRotation(2.0 * M_PI  - M_PI / 8.0 * (condition.windDirection - 1));
@@ -71,6 +74,15 @@ NSString *const KMTTWHotIcon = @"HotTemp";
 
 
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)setRegion:(MTTWRegion *)region
+{
+    if (_region != region)
+    {
+        _region = region;
+        self.needUpdateUI = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning

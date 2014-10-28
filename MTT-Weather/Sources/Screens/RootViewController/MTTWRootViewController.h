@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class NSManagedObjectID;
 @class MTTWRegion;
 
 @interface MTTWRootViewController : UIViewController
 
 @property (nonatomic, strong) MTTWRegion *region;
+@property (nonatomic, strong) NSManagedObjectID *regionID;
 
 @end
+

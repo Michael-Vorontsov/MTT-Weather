@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6245"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTTWRootViewController">
             <connections>
+                <outlet property="backgroundView" destination="IJL-mA-ep2" id="ykv-RW-2A5"/>
                 <outlet property="detailsViewContainer" destination="ceC-uU-y22" id="WQ5-U6-2AD"/>
+                <outlet property="forecastsTableView" destination="uEP-fn-xca" id="p9B-4p-yR6"/>
+                <outlet property="regionsListContainer" destination="HYO-78-wZR" id="Jf3-Sx-SWT"/>
+                <outlet property="searchBar" destination="P9b-Tb-wfg" id="oW1-x5-bhk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,27 +19,96 @@
             <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" alpha="0.69999999999999973" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Autumn1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IJL-mA-ep2">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MS6-qt-eiK" userLabel="DatesListViewContainer">
-                    <rect key="frame" x="8" y="8" width="150" height="304"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="8" y="8" width="100" height="304"/>
+                    <subviews>
+                        <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdp-4A-wgQ">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="304"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="uEP-fn-xca">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="304"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="4G0-b5-Yy6"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="d7r-Y5-PnP"/>
+                        <constraint firstAttribute="bottom" secondItem="uEP-fn-xca" secondAttribute="bottom" id="6e4-qp-6mS"/>
+                        <constraint firstItem="uEP-fn-xca" firstAttribute="top" secondItem="MS6-qt-eiK" secondAttribute="top" id="PeK-2f-Zcc"/>
+                        <constraint firstItem="uEP-fn-xca" firstAttribute="leading" secondItem="MS6-qt-eiK" secondAttribute="leading" id="UgI-zn-aJ0"/>
+                        <constraint firstItem="mdp-4A-wgQ" firstAttribute="top" secondItem="MS6-qt-eiK" secondAttribute="top" id="aFw-N5-0Ab"/>
+                        <constraint firstAttribute="trailing" secondItem="mdp-4A-wgQ" secondAttribute="trailing" id="cqL-hk-Ehl"/>
+                        <constraint firstAttribute="width" constant="100" id="d7r-Y5-PnP"/>
+                        <constraint firstItem="mdp-4A-wgQ" firstAttribute="leading" secondItem="MS6-qt-eiK" secondAttribute="leading" id="oVp-oG-2r3"/>
+                        <constraint firstAttribute="bottom" secondItem="mdp-4A-wgQ" secondAttribute="bottom" id="tVr-zc-X2E"/>
+                        <constraint firstAttribute="trailing" secondItem="uEP-fn-xca" secondAttribute="trailing" id="xu7-G0-uBr"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HYO-78-wZR" userLabel="LocationsListViewContainer">
-                    <rect key="frame" x="460" y="8" width="100" height="304"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="410" y="8" width="150" height="304"/>
+                    <subviews>
+                        <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9JT-p2-4Hi">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="304"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="ZpP-lL-1Rd"/>
+                        <constraint firstAttribute="trailing" secondItem="9JT-p2-4Hi" secondAttribute="trailing" id="2fN-Kj-fQ9"/>
+                        <constraint firstItem="9JT-p2-4Hi" firstAttribute="leading" secondItem="HYO-78-wZR" secondAttribute="leading" id="7m4-eh-qQC"/>
+                        <constraint firstItem="9JT-p2-4Hi" firstAttribute="top" secondItem="HYO-78-wZR" secondAttribute="top" id="FjN-Ke-qdm"/>
+                        <constraint firstAttribute="bottom" secondItem="9JT-p2-4Hi" secondAttribute="bottom" id="G3k-2V-Fee"/>
+                        <constraint firstAttribute="width" constant="150" id="ZpP-lL-1Rd"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ceC-uU-y22" userLabel="DetailsViewContainer">
-                    <rect key="frame" x="166" y="8" width="286" height="304"/>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="116" y="8" width="286" height="304"/>
+                    <subviews>
+                        <view alpha="0.39999999999999997" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJF-9R-Lee">
+                            <rect key="frame" x="0.0" y="0.0" width="286" height="304"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="SJF-9R-Lee" firstAttribute="leading" secondItem="ceC-uU-y22" secondAttribute="leading" id="8Xb-Yu-ghv"/>
+                        <constraint firstAttribute="trailing" secondItem="SJF-9R-Lee" secondAttribute="trailing" id="NkR-Jn-5Kp"/>
+                        <constraint firstAttribute="bottom" secondItem="SJF-9R-Lee" secondAttribute="bottom" id="R2R-bI-cW3"/>
+                        <constraint firstItem="SJF-9R-Lee" firstAttribute="top" secondItem="ceC-uU-y22" secondAttribute="top" id="b0g-Pm-Ydu"/>
+                    </constraints>
                 </view>
+                <searchBar hidden="YES" contentMode="redraw" placeholder="Type region to add" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-Tb-wfg">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="lqh-h4-1DM"/>
+                    </connections>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="P9b-Tb-wfg" secondAttribute="trailing" id="3VL-tN-trS"/>
                 <constraint firstItem="HYO-78-wZR" firstAttribute="leading" secondItem="ceC-uU-y22" secondAttribute="trailing" constant="8" id="CX1-KX-Sdg"/>
                 <constraint firstAttribute="bottom" secondItem="ceC-uU-y22" secondAttribute="bottom" constant="8" id="Cgu-eI-yA9"/>
                 <constraint firstItem="HYO-78-wZR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="IaI-yo-kkg"/>
@@ -44,10 +117,12 @@
                 <constraint firstItem="ceC-uU-y22" firstAttribute="leading" secondItem="MS6-qt-eiK" secondAttribute="trailing" constant="8" id="RbR-xH-18e"/>
                 <constraint firstAttribute="bottom" secondItem="MS6-qt-eiK" secondAttribute="bottom" constant="8" id="Rut-2T-520"/>
                 <constraint firstItem="MS6-qt-eiK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="X5t-z5-p07"/>
+                <constraint firstItem="P9b-Tb-wfg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZR7-i1-iX4"/>
                 <constraint firstItem="ceC-uU-y22" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="aus-Sl-xdj"/>
                 <constraint firstAttribute="bottom" secondItem="HYO-78-wZR" secondAttribute="bottom" constant="8" id="kd5-OW-iJN"/>
                 <constraint firstItem="ceC-uU-y22" firstAttribute="leading" secondItem="MS6-qt-eiK" secondAttribute="trailing" constant="8" id="lVq-1T-87N"/>
                 <constraint firstAttribute="trailing" secondItem="HYO-78-wZR" secondAttribute="trailing" constant="8" id="oWS-Uw-Dsd"/>
+                <constraint firstItem="P9b-Tb-wfg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="odD-qx-jKZ"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -56,4 +131,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="Autumn1.jpg" width="1032" height="774"/>
+    </resources>
 </document>
