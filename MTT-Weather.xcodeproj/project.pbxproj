@@ -40,7 +40,6 @@
 		1C5746C319FE946500ABD1BA /* HotTemp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C5746C119FE946500ABD1BA /* HotTemp.png */; };
 		1C5746CF19FE9CCA00ABD1BA /* MTTWForecastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5746CD19FE9CCA00ABD1BA /* MTTWForecastTableViewCell.m */; };
 		1C5746D519FEA5CD00ABD1BA /* MTTWRegionListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5746D319FEA5CD00ABD1BA /* MTTWRegionListViewController.m */; };
-		1CF1EFB419FBE23A0034BB61 /* MTT_WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFB319FBE23A0034BB61 /* MTT_WeatherTests.m */; };
 		1CF1EFCA19FBE3CE0034BB61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFBF19FBE3CE0034BB61 /* Images.xcassets */; };
 		1CF1EFCC19FBE3CE0034BB61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFC619FBE3CE0034BB61 /* main.m */; };
 		1CF1EFCD19FBE3CE0034BB61 /* MTTWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFC819FBE3CE0034BB61 /* MTTWAppDelegate.m */; };
@@ -48,7 +47,6 @@
 		1CF1EFD619FBE4D10034BB61 /* MTTWRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFD519FBE4D10034BB61 /* MTTWRootViewController.xib */; };
 		1CF1EFDC19FBEF360034BB61 /* MTTWDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF1EFDA19FBEF360034BB61 /* MTTWDetailsViewController.m */; };
 		1CF1EFDF19FBEF610034BB61 /* MTTWDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CF1EFDE19FBEF610034BB61 /* MTTWDetailsViewController.xib */; };
-		1CF1EFEB19FBFA5D0034BB61 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF1EFE119FBFA5D0034BB61 /* libOCMock.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +103,6 @@
 		1CF1EF8E19FBE23A0034BB61 /* MTT-Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MTT-Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF1EFAD19FBE23A0034BB61 /* MTT-WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MTT-WeatherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF1EFB219FBE23A0034BB61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CF1EFB319FBE23A0034BB61 /* MTT_WeatherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTT_WeatherTests.m; sourceTree = "<group>"; };
 		1CF1EFBF19FBE3CE0034BB61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1CF1EFC319FBE3CE0034BB61 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CF1EFC619FBE3CE0034BB61 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -117,16 +114,6 @@
 		1CF1EFD919FBEF360034BB61 /* MTTWDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTWDetailsViewController.h; sourceTree = "<group>"; };
 		1CF1EFDA19FBEF360034BB61 /* MTTWDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTWDetailsViewController.m; sourceTree = "<group>"; };
 		1CF1EFDE19FBEF610034BB61 /* MTTWDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTTWDetailsViewController.xib; sourceTree = "<group>"; };
-		1CF1EFE119FBFA5D0034BB61 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
-		1CF1EFE219FBFA5D0034BB61 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
-		1CF1EFE319FBFA5D0034BB61 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
-		1CF1EFE419FBFA5D0034BB61 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
-		1CF1EFE519FBFA5D0034BB61 /* OCMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
-		1CF1EFE619FBFA5D0034BB61 /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
-		1CF1EFE719FBFA5D0034BB61 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
-		1CF1EFE819FBFA5D0034BB61 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
-		1CF1EFE919FBFA5D0034BB61 /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
-		1CF1EFEA19FBFA5D0034BB61 /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +128,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF1EFEB19FBFA5D0034BB61 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,10 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				1C38B8FC19FE4EAB005BE05A /* Mocks */,
-				1CF1EFE019FBFA5D0034BB61 /* OCMock */,
 				1CF1EFB119FBE23A0034BB61 /* Supporting Files */,
 				1C38B8EC19FC4A8D005BE05A /* MTTWDataManagerTests.m */,
-				1CF1EFB319FBE23A0034BB61 /* MTT_WeatherTests.m */,
 				1C5746AE19FE733800ABD1BA /* MTTWObjectBuilderTest.m */,
 			);
 			path = "MTT-WeatherTests";
@@ -416,23 +400,6 @@
 				1CF1EFDE19FBEF610034BB61 /* MTTWDetailsViewController.xib */,
 			);
 			path = DetailsViewController;
-			sourceTree = "<group>";
-		};
-		1CF1EFE019FBFA5D0034BB61 /* OCMock */ = {
-			isa = PBXGroup;
-			children = (
-				1CF1EFE119FBFA5D0034BB61 /* libOCMock.a */,
-				1CF1EFE219FBFA5D0034BB61 /* NSNotificationCenter+OCMAdditions.h */,
-				1CF1EFE319FBFA5D0034BB61 /* OCMArg.h */,
-				1CF1EFE419FBFA5D0034BB61 /* OCMConstraint.h */,
-				1CF1EFE519FBFA5D0034BB61 /* OCMLocation.h */,
-				1CF1EFE619FBFA5D0034BB61 /* OCMMacroState.h */,
-				1CF1EFE719FBFA5D0034BB61 /* OCMock.h */,
-				1CF1EFE819FBFA5D0034BB61 /* OCMockObject.h */,
-				1CF1EFE919FBFA5D0034BB61 /* OCMRecorder.h */,
-				1CF1EFEA19FBFA5D0034BB61 /* OCMStubRecorder.h */,
-			);
-			path = OCMock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -577,7 +544,6 @@
 				1C38B8EB19FC4785005BE05A /* MTTWDailyForecast.m in Sources */,
 				1C38B8E319FC4784005BE05A /* MTTWWeatherCondition.m in Sources */,
 				1C38B8C419FC0C78005BE05A /* MTTWDataController.m in Sources */,
-				1CF1EFB419FBE23A0034BB61 /* MTT_WeatherTests.m in Sources */,
 				1C5746AF19FE733800ABD1BA /* MTTWObjectBuilderTest.m in Sources */,
 				1C38B8ED19FC4A8D005BE05A /* MTTWDataManagerTests.m in Sources */,
 				1C38B8E719FC4785005BE05A /* MTTWRegion.m in Sources */,

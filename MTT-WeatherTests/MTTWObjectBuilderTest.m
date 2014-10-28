@@ -23,13 +23,13 @@
 
 @implementation MTTWObjectBuilderTest
 
-- (void)setUp {
+- (void)setUp
+{
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+- (void)tearDown
+{
     [super tearDown];
 }
 
@@ -101,7 +101,7 @@
 {
     [self measureBlock:
     ^{
-        NSURL *url = [[NSBundle bundleForClass:[self class]] URLForResource:@"unknown-location" withExtension:@"json"];
+        NSURL *url = [[NSBundle bundleForClass:[self class]] URLForResource:@"kiev-response" withExtension:@"json"];
         NSData *data = [NSData dataWithContentsOfURL:url];
         NSError *error = nil;
         id collection = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];

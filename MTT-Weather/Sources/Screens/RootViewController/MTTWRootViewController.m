@@ -152,6 +152,7 @@ NSString *const kMTTWForecastCellReuseID = @"ForecastCell";
 
 - (void)syncRegionWithName:(NSString *)regionName
 {
+    [self.operationQueue cancelAllOperations];
     MTTWForecastSyncOperation *operation = [MTTWForecastSyncOperation syncOperationForRegionName:regionName];
     NSOperation *completionOperation = [NSBlockOperation blockOperationWithBlock:
                                         ^{
