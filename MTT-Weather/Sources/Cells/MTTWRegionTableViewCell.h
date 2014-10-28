@@ -11,6 +11,7 @@
 @class MTTWIconImageView;
 
 @interface MTTWRegionTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet MTTWIconImageView *iconImageView;
 

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MTTWForecastTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maxTempLabel;
 @property (weak, nonatomic) IBOutlet UILabel *minTempLabel;

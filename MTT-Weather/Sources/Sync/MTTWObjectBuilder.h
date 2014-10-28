@@ -20,5 +20,6 @@ typedef NS_ENUM(NSInteger, MTTWErrorCodes)
 
 + (MTTWRegion *)regionWithDictionary:(NSDictionary *)dictionaryRepresentation;
 + (NSError *)lastError;
+//+ (MTTWObjectBuilder *)sharedBuilder;
 
 @end

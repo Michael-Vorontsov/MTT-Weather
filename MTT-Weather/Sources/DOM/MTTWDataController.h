@@ -14,7 +14,6 @@
 @property (nonatomic, strong, readonly) NSManagedObjectContext *mainContext;
 @property (nonatomic, strong, readonly) NSManagedObjectContext *syncContext;
 
-
 + (instancetype)sharedController;
 
 + (void)saveChangesInContext:(NSManagedObjectContext *)context recursive:(BOOL)hadSaveRecursive;

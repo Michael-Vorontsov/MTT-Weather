@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
+#import "MTTWDataController.h"
 #import "MTTWObjectBuilder.h"
 
 #import "MTTWDailyForecast.h"
@@ -17,7 +18,11 @@
 
 @interface MTTWObjectBuilderTest : XCTestCase
 
+@end
 
+@interface MTTWObjectBuilder()
+
++ (MTTWObjectBuilder *)sharedBuilder;
 
 @end
 
@@ -25,11 +30,25 @@
 
 - (void)setUp
 {
+// Bind object builder to test storage
+
+    NSURL *applicationDocumentsDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL *dbURL = [applicationDocumentsDirectoryURL URLByAppendingPathComponent:@"testStorage.sqlite"];
+
+    MTTWDataController *controller = [[MTTWDataController alloc] initWithFileURL:dbURL];
+    [[MTTWObjectBuilder sharedBuilder] setValue:controller forKey:@"dataController"];
+
     [super setUp];
 }
 
 - (void)tearDown
 {
+// Remove test storage
+
+    NSURL *applicationDocumentsDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL *dbURL = [applicationDocumentsDirectoryURL URLByAppendingPathComponent:@"testStorage.sqlite"];
+
+    [[NSFileManager defaultManager] removeItemAtURL:dbURL error:nil];
     [super tearDown];
 }
 
@@ -97,16 +116,16 @@
 
 }
 
-- (void)testPerformanceTest
-{
-    [self measureBlock:
-    ^{
-        NSURL *url = [[NSBundle bundleForClass:[self class]] URLForResource:@"kiev-response" withExtension:@"json"];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        NSError *error = nil;
-        id collection = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-        [MTTWObjectBuilder regionWithDictionary:collection];
-    }];
-}
+//- (void)testPerformanceTest
+//{
+//    [self measureBlock:
+//    ^{
+//        NSURL *url = [[NSBundle bundleForClass:[self class]] URLForResource:@"kiev-response" withExtension:@"json"];
+//        NSData *data = [NSData dataWithContentsOfURL:url];
+//        NSError *error = nil;
+//        id collection = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+//        [MTTWObjectBuilder regionWithDictionary:collection];
+//    }];
+//}
 
 @end

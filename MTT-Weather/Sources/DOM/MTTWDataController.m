@@ -27,7 +27,6 @@ static MTTWDataController* sMTTWSharedDataController = nil;
 
 + (MTTWDataController *)sharedController
 {
-    //    @synchronized(self)
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken,
     ^{
@@ -36,7 +35,7 @@ static MTTWDataController* sMTTWSharedDataController = nil;
           NSURL *applicationDocumentsDirectoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
           NSURL *storeURL = [applicationDocumentsDirectoryURL URLByAppendingPathComponent:@"MTTWDataStorage.sqlite"];
           NSAssert(storeURL != nil, @"Invalid URL for storing");
-          if (storeURL)
+          if (nil != storeURL)
           {
               sMTTWSharedDataController = [[self alloc] initWithFileURL:storeURL];
               [sMTTWSharedDataController mainContext];
@@ -68,7 +67,7 @@ static MTTWDataController* sMTTWSharedDataController = nil;
     @synchronized (self)
     {
         NSPersistentStoreCoordinator *coordinator = [self storeCoordinator];
-        if (coordinator != nil)
+        if (nil != coordinator)
         {
             _rootContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
             [_rootContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
